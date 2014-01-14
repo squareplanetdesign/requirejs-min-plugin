@@ -1,6 +1,5 @@
 define({
     load: function (name, req, onload, config) {
-        
         var minName = name;
         // Extent the name with the .min
         if (!config.debug) {
