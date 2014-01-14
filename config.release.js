@@ -1,4 +1,4 @@
-__CONFIG = {
+var require = {
         baseUrl: "",
         paths: {
             underscore: "underscore.min",

@@ -1,4 +1,4 @@
-require.config(__CONFIG)(["min!app"], function(app) {
+require(["min!app"], function(app) {
     var el = document.getElementById("do");
     el.innerHTML = "Done Loading!!!";    
     app.go(); 
