@@ -1,7 +1,10 @@
 var require = {
         baseUrl: ".",
         waitSeconds: 10000,
-        debug: true,
+        min : {
+            debug: false,
+            extension: "-min"
+        },
         paths: {
             underscore: "underscore",
         },

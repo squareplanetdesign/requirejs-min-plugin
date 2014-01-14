@@ -134,9 +134,9 @@ You will see the following requests on your network:
 Forcing your application to load debug versions of the files
 ===============================================================
 
-Finally lets change the config to force it to load the debug versions of the files.
+Next lets change the config to force it to load the debug versions of the files.
 
-To do this just add the debug flag to th require js configuration as follows:
+To do this just add the debug flag to the require js configuration as follows:
 
 index.html:
 
@@ -145,7 +145,9 @@ index.html:
 	    <head>
 	        <script>
 	    		require = {
-	   				debug : true
+	   				min : {
+	   					debug : true
+	   				}
 				};
 			</script>
 	        <script data-main="min!main" src="require.js"></script>
@@ -163,5 +165,41 @@ You will see the following requests on your network:
 	http://localhost/require.js
 	http://localhost/main.js
 	http://localhost/module1.js
+
+
+Changing the 
+===============================================================
+
+Finally lets change the config to load minized files with a different extension.
+
+To do this just add the extension to the require js configuration as follows:
+
+index.html:
+
+	<!DOCTYPE html>
+	<html>
+	    <head>
+	        <script>
+	    		require = {
+	   				min : {
+	   					extension : "-min"
+	   				}
+				};
+			</script>
+	        <script data-main="min!main" src="require.js"></script>
+	    </head>
+	    <body>
+	    	...
+	    </body>
+	</html>
+
+Loading your application now results in the debug files being loaded.
+
+You will see the following requests on your network:
+
+	http://localhost/index.html
+	http://localhost/require.js
+	http://localhost/main-min.js
+	http://localhost/module1-min.js
 
 
