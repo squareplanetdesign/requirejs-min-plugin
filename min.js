@@ -40,6 +40,8 @@
          *     otherwise will load the minimized verions of the resource. 
          *     @param  {Boolean} config.min.extension Extension to add the the module name for 
          *     the minimized file before the .js extension.
+         *     @param  {Boolean} config.min.format Formatting function applied to the name before 
+         *     the extension processing. Only applied to the minimized request.   
          */
         load: function (name, req, onload, config) {
 
@@ -47,13 +49,19 @@
                 config.min = {
                     extension : defaultExtension
                 };
-            } else if (!config.min.extension) {
-                config.min.extension = defaultExtension;
+            } else {
+                if (!config.min.extension) {
+                    config.min.extension = defaultExtension;
+                }
             }
 
             var minName = name;
             // Extent the name with the .min
             if (!config.min.debug) {
+                if (config.min.format) {
+                    minName = config.min.format(minName);
+                    debugger;
+                }
                 minName += config.min.extension;
             }
 

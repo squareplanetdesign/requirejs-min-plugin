@@ -2,7 +2,10 @@ var require = {
         baseUrl: "",
         min : {
             debug: false,
-            extension: "-min"
+            extension: ".min",
+            format: function(name) {
+                return name.replace(/(.*)/, ".generated/$1");
+            }
         },
         paths: {
             underscore: "underscore.min",
