@@ -167,7 +167,7 @@ You will see the following requests on your network:
 	http://localhost/module1.js
 
 
-Changing the 
+Changing the extension:
 ===============================================================
 
 Finally lets change the config to load minized files with a different extension.
