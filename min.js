@@ -1,3 +1,5 @@
+/*global requirejs: false, define: false, console: false */
+
 /**
  * The min plugin module is used with require js to extend its functionality
  * to support fallback loading of minimzed and non-minmized versions of the 
