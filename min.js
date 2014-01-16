@@ -82,24 +82,23 @@
             if (!config.min.debug) {
                 if (config.min.format) {
                     minName = config.min.format(minName);
-                    debugger;
                 }
                 minName += config.min.extension;
             }
 
             req([minName], onload, function (err) {
-                // Handle gracefule fallback to the unminified version
+                // Handle graceful fall-back to the non-minified version
                 var failedId = err.requireModules && err.requireModules[0];
                 if (failedId) {
                     requirejs.undef(failedId);
-                    // fall back to the non-minififed version
+                    // fall back to the non-minified version
                     req([name], onload, function(err) {
-                        // Handle gracefule fallback to the unminified version
+                        // No version of the file is available so just fail out.
                         var failedId = err.requireModules && err.requireModules[0];
                         if (failedId) {
                             requirejs.undef(failedId);
                         }
-                        console.log ("Could not load either " + minName + " or " + name + " dependenices.");
+                        console.log ("Could not load either " + minName + " or " + name + " dependencies.");
                     });
                 }
             });
