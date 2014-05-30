@@ -1,0 +1,23 @@
+{
+  "author": "https://github.com/squareplanetdesign/requirejs-min-plugin/graphs/contributors",
+  "name": "requirejs-min-plugin",
+  "version": "0.1.0-SNAPSHOT",
+  "homepage": "https://github.com/squareplanetdesign/requirejs-min-plugin",
+  "dependencies": {},
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-ngdocs": "~0.1.1",
+    "grunt-conventional-changelog": "~0.1.2",
+    "grunt-contrib-concat": "~0.3.0",
+    "grunt-contrib-copy": "~0.5.0",
+    "grunt-contrib-rename": "~0.0.3",
+    "grunt-contrib-uglify": "~0.3.0",
+    "grunt-contrib-watch": "~0.5.0",
+    "grunt-contrib-jshint": "~0.8.0",
+    "grunt-karma": "~0.4.4",
+    "node-markdown": "0.1.1",
+    "semver": "~2.2.0",
+    "shelljs": "~0.2.0"
+  },
+  "license": "MIT"
+}
