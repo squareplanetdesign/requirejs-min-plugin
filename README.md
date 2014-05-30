@@ -4,6 +4,9 @@ requirejs-min-plugin
 
 Contains a plugin for require.js plugin that allows the developer to provide a fallback for .min files if they are not yet generated on the server.  The fallback logic can be reversed for development enviornments with the debug config flag.
 
+Roadmap
+=========================================
+After working with a few other projects with grunt and karma, I decided to reorganize this project to have a build and test enviornment. Some of the ground work is laid, but its not fully functional yet. Please have patience.
 
 How it works?
 =========================================
