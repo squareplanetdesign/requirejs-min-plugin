@@ -1,8 +1,8 @@
-RequireJSWithMinFallbackPlugin
+requirejs-min-plugin
 =========================================
 
 
-Contains a sample RequireJS plugin plus sample code that allows users to have both minimized and non-minimized fallback logic.
+Contains a plugin for require.js plugin that allows the developer to provide a fallback for .min files if they are not yet generated on the server.  The fallback logic can be reversed for development enviornments with the debug config flag.
 
 
 How it works?
