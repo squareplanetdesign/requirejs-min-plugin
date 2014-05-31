@@ -19,5 +19,9 @@
     "semver": "~2.2.0",
     "shelljs": "~0.2.0"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/squareplanetdesign/requirejs-min-plugin.git"
+  },
   "license": "MIT"
 }
