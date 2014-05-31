@@ -1,4 +1,5 @@
 define(['test/t1'], function(test) {
+
     describe('Checking if requirejs loads normal test', function() {
 
         it('loaded t1.js correctly', function() {
