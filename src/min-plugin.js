@@ -88,27 +88,24 @@
             }
 
             req([minName],
-                function(value) {
-                    debugger;
-                    onload(value);
-                },
+                onload,
                 function (err) {
-                    debugger;
-                // Handle graceful fall-back to the non-minified version
-                var failedId = err.requireModules && err.requireModules[0];
-                if (failedId) {
-                    requirejs.undef(failedId);
-                    // fall back to the non-minified version
-                    req([name], onload, function(err) {
-                        // No version of the file is available so just fail out.
-                        var failedId = err.requireModules && err.requireModules[0];
-                        if (failedId) {
-                            requirejs.undef(failedId);
-                        }
-                        console.log ("Could not load either " + minName + " or " + name + " dependencies.");
-                    });
+                    // Handle graceful fall-back to the non-minified version
+                    var failedId = err.requireModules && err.requireModules[0];
+                    if (failedId) {
+                        requirejs.undef(failedId);
+                        // fall back to the non-minified version
+                        req([name], onload, function(err) {
+                            // No version of the file is available so just fail out.
+                            var failedId = err.requireModules && err.requireModules[0];
+                            if (failedId) {
+                                requirejs.undef(failedId);
+                            }
+                            console.log ("Could not load either " + minName + " or " + name + " dependencies.");
+                        });
+                    }
                 }
-            });
+            );
         }
     });
 
