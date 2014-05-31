@@ -80,31 +80,14 @@ module.exports = function(grunt) {
             }
         },
         karma: {
-            options: {
-                configFile: 'karma.conf.js'
+            "test-require": {
+                configFile: 'karma.require.conf.js'
             },
-            watch: {
-                background: true
+            "test-min-plugin-default": {
+                configFile: 'karma.min-plugin-default.conf.js'
             },
-            continuous: {
-                singleRun: true
-            },
-            jenkins: {
-                singleRun: true,
-                colors: false,
-                reporters: ['dots', 'junit'],
-                browsers: ['Chrome', 'ChromeCanary', 'Firefox', 'Opera', '/Users/jenkins/bin/safari.sh']
-            },
-            travis: {
-                singleRun: true,
-                reporters: ['dots'],
-                browsers: ['Firefox']
-            },
-            coverage: {
-                preprocessors: {
-                    'src/*.js': 'coverage'
-                },
-                reporters: ['progress', 'coverage']
+            "test-min-plugin-default-debug": {
+                configFile: 'karma.min-plugin-default-debug.conf.js'
             }
         },
         changelog: {

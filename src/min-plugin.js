@@ -68,7 +68,7 @@
          *     the extension processing. Only applied to the minimized request.
          */
         load: function (name, req, onload, config) {
-
+            debugger;
             if(!config.min) {
                 config.min = {
                     extension : defaultExtension
@@ -88,7 +88,13 @@
                 minName += config.min.extension;
             }
 
-            req([minName], onload, function (err) {
+            req([minName],
+                function(value) {
+                    debugger;
+                    onload(value);
+                },
+                function (err) {
+                    debugger;
                 // Handle graceful fall-back to the non-minified version
                 var failedId = err.requireModules && err.requireModules[0];
                 if (failedId) {
