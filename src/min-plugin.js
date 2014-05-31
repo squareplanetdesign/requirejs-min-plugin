@@ -68,7 +68,6 @@
          *     the extension processing. Only applied to the minimized request.
          */
         load: function (name, req, onload, config) {
-            debugger;
             if(!config.min) {
                 config.min = {
                     extension : defaultExtension
