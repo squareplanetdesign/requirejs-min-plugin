@@ -80,7 +80,7 @@
 
             var minName = name;
             // Extent the name with the .min
-            if (!config.min.debug) {
+            if (config.isBuild || !config.min.debug) {
                 if (config.min.format) {
                     minName = config.min.format(minName);
                 }
