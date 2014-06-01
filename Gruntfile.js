@@ -80,14 +80,36 @@ module.exports = function(grunt) {
             }
         },
         karma: {
-            "test-require": {
+            /*'test-require': {
                 configFile: 'karma.require.conf.js'
-            },
-            "test-min-plugin-default": {
+            },*/
+            'test-min-plugin-default': {
                 configFile: 'karma.min-plugin-default.conf.js'
             },
-            "test-min-plugin-default-debug": {
+            'test-min-plugin-default-debug': {
                 configFile: 'karma.min-plugin-default-debug.conf.js'
+            },
+            watch: {
+               background: true
+            },
+            continuous: {
+               singleRun: true
+            },
+            jenkins: {
+               singleRun: true,
+               colors: false,
+               reporters: ['dots', 'junit'],
+               browsers: ['Chrome', 'ChromeCanary', 'Firefox', 'Opera', '/Users/jenkins/bin/safari.sh']
+            },
+            travis: {
+               singleRun: true,
+               reporters: ['dots'],
+               browsers: ['Firefox']
+            },
+            coverage: {
+                preprocessors: {
+                    'src/*.js': 'coverage'
+                }
             }
         },
         changelog: {
@@ -142,7 +164,7 @@ module.exports = function(grunt) {
     });
 
     grunt.registerTask('test', 'Run tests on singleRun karma server', function () {
-        //this task can be executed in 3 different environments: local, Travis-CI and Jenkins-CI
+        /*//this task can be executed in 3 different environments: local, Travis-CI and Jenkins-CI
         //we need to take settings for each one into account
         if (process.env.TRAVIS) {
             grunt.task.run('karma:travis');
@@ -155,7 +177,10 @@ module.exports = function(grunt) {
                 grunt.config.set('karma.options', karmaOptions);
             }
             grunt.task.run(this.args.length ? 'karma:jenkins' : 'karma:continuous');
-        }
+        }*/
+
+        grunt.task.run('karma:test-min-plugin-default');
+        grunt.task.run('karma:test-min-plugin-default-debug');
     });
 
     function setVersion(type, suffix) {

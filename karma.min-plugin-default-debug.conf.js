@@ -18,8 +18,8 @@ module.exports = function(config) {
       'src/test/main-min-plugin-default-debug.js',
       {pattern: 'src/*.js', included: false},
       {pattern: 'src/test/min-plugin-default-debug.spec.js', included: false},
-      {pattern: 'src/test/t1.js', included: false},
-      {pattern: 'src/test/t1.min.js', included: false}
+      {pattern: 'src/test/t*.js', included: false},
+      {pattern: 'src/test/t*.min.js', included: false}
     ],
 
 
@@ -39,7 +39,7 @@ module.exports = function(config) {
     // test results reporter to use
     // possible values: 'dots', 'progress'
     // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-    reporters: ['progress'],
+    reporters: ['progress', 'spec', 'html', 'story'],
 
 
     // web server port
